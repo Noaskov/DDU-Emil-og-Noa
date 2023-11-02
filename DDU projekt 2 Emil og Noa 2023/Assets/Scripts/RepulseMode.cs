@@ -6,8 +6,8 @@ public class RepulseMode : MonoBehaviour
 {
 
     public bool Blocking;
-    float maxRepulsionDist = 3f;
-    float repulsionForce = 3.7f;
+    float maxRepulsionDist = 2.5f;
+    float repulsionForce = 4.7f;
     public Transform otherPlayer;
     public LayerMask WhatIsOtherObstacle;
     public Rigidbody2D rb;
