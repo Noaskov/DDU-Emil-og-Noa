@@ -28,4 +28,9 @@ public class CreateAndJoinLobbies : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("First Map");
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }

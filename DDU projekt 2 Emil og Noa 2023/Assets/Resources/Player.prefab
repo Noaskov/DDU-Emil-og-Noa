@@ -176,15 +176,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7560296642737401234}
-  moveSpeed: 4
-  maxSpeed: 3
+  moveSpeed: 7
+  maxSpeed: 4
   isgrounded: 0
   playerHeight: 0.1
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
   canJump: 1
-  JumpForce: 7
+  JumpForce: 8
 --- !u!114 &1592013123611001404
 MonoBehaviour:
   m_ObjectHideFlags: 0
