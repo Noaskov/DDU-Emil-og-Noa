@@ -25,7 +25,7 @@ public class CreateAndJoinLobbies : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("First Map");
+        PhotonNetwork.LoadLevel("Secound Map");
     }
 
     public void QuitGame()

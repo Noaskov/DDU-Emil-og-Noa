@@ -16,13 +16,15 @@ public class RepulseMode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         otherPlayer = FindObjectOfType<MovementScript>().transform;
-        rb = GetComponent<Rigidbody2D>();
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(otherPlayer != this.gameObject) { 
             Vector3 dir = otherPlayer.position - transform.position;
        
         float curDist = Vector3.Distance(otherPlayer.position,transform.position);
@@ -41,6 +43,6 @@ public class RepulseMode : MonoBehaviour
             Debug.DrawRay(transform.position,dir,Color.green);
         }
         }
-        
+        }
     }
 }
