@@ -11,13 +11,21 @@ public class RepulseMode : MonoBehaviour
     public Transform otherPlayer;
     public LayerMask WhatIsOtherObstacle;
     public Rigidbody2D rb;
+    string[] Names = { "Player1", "Player2" };
     
 
     // Start is called before the first frame update
     void Start()
     {
         
-        otherPlayer = FindObjectOfType<MovementScript>().transform;
+        if(this.gameObject.name == Names[0])
+        {
+            otherPlayer = GameObject.Find("Player2").transform;
+        }
+        else
+        {
+            otherPlayer = GameObject.Find("Player1").transform;
+        }
         rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
 

@@ -5,31 +5,36 @@ using Photon.Pun;
 
 public class SpawnPlayers : MonoBehaviour
 {
-    public GameObject Player1;
+    public GameObject Player;
     public Transform[] Playerspawns;
     public bool firstPlayer = true;
-    public int NumberOfPlayers = 1;
+   [SerializeField] private int NumberOfPlayers = 0;
 
     private void Start()
     {
-        
-        
-        if (NumberOfPlayers ==1)
+
+
+
+
+        if (PhotonNetwork.IsMasterClient)
         {
 
-             PhotonNetwork.Instantiate(Player1.name, Playerspawns[0].position, Quaternion.identity);
-            NumberOfPlayers = 2;
-        }
-        else if(NumberOfPlayers==2)
-        {
-            PhotonNetwork.Instantiate(Player1.name, Playerspawns[1].position, Quaternion.identity);
+         PhotonNetwork.Instantiate(Player.name, Playerspawns[0].position, Quaternion.identity);
         }
         else
         {
-            return;
+            PhotonNetwork.Instantiate(Player.name, Playerspawns[1].position, Quaternion.identity);
+
         }
+
+           
+
+
+  
           
         
         
     }
+
+    
 }
