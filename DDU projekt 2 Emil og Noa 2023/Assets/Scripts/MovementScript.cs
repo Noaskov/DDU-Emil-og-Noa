@@ -13,11 +13,13 @@ public class MovementScript : MonoBehaviour
     public LayerMask WhatIsGround;
     public bool canJump;
     public float JumpForce;
+   
 
     PhotonView view;
     // Start is called before the first frame update
     void Start()
     {
+        
         view = GetComponent<PhotonView>();
     }
 
@@ -26,6 +28,7 @@ public class MovementScript : MonoBehaviour
     {
         if (view.IsMine)
         {
+       
 
         isgrounded = Physics2D.Raycast(transform.position, Vector2.down, playerHeight * 0.5f + 0.3f, WhatIsGround);
             //  rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed);

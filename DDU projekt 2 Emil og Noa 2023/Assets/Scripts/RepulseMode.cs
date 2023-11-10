@@ -11,28 +11,36 @@ public class RepulseMode : MonoBehaviour
     public Transform otherPlayer;
     public LayerMask WhatIsOtherObstacle;
     public Rigidbody2D rb;
-    string[] Names = { "Player1", "Player2" };
+    string[] Names = { "HostPlayer", "Player(Clone)" };
     
 
     // Start is called before the first frame update
     void Start()
     {
+            rb = this.gameObject.GetComponent<Rigidbody2D>();
         
-        if(this.gameObject.name == Names[0])
-        {
-            otherPlayer = GameObject.Find("Player2").transform;
-        }
-        else
-        {
-            otherPlayer = GameObject.Find("Player1").transform;
-        }
-        rb = this.gameObject.GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(otherPlayer != this.gameObject) { 
+        if(otherPlayer == null)
+        {
+            if (this.gameObject.name == Names[0])
+            {
+                otherPlayer = GameObject.Find("Player(Clone)").transform;
+            }
+            else if(this.gameObject.name == Names[1])
+            {
+                otherPlayer = GameObject.Find("HostPlayer").transform;
+            }
+            else
+            {
+                return;
+            }
+        }
+        
             Vector3 dir = otherPlayer.position - transform.position;
        
         float curDist = Vector3.Distance(otherPlayer.position,transform.position);
@@ -51,6 +59,6 @@ public class RepulseMode : MonoBehaviour
             Debug.DrawRay(transform.position,dir,Color.green);
         }
         }
-        }
+        
     }
 }

@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private float Threshold = 0.1f;
+    private float Speed = 0.03f;
+    public Transform StartPosition;
+    public Transform EndPosition;
+    Transform target;
+    Vector3 dir;
+   
     void Start()
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        transform.position = StartPosition.position;
+        target.position = StartPosition.position;
         
     }
+
+    
+    void FixedUpdate()
+    {
+        dir = transform.position - target.position;
+        dir = dir.normalized * Speed;
+        if(dir.sqrMagnitude < Threshold)
+        {
+            target.position = EndPosition.position;
+        }
+        
+        
+        transform.position -= dir;
+    }
+
+    
 }

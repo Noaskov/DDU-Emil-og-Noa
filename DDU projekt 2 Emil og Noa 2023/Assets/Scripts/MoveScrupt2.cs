@@ -33,8 +33,8 @@ public class MoveScrupt2 : MonoBehaviour
         }
 
 
-        bool moveA = Input.GetKey(KeyCode.LeftArrow);
-        bool moveD = Input.GetKey(KeyCode.RightArrow);
+        bool moveA = Input.GetKey(KeyCode.J);
+        bool moveD = Input.GetKey(KeyCode.L);
         if (moveA && !moveD)
         {
 
@@ -46,7 +46,7 @@ public class MoveScrupt2 : MonoBehaviour
             rb.AddForce(new Vector2(moveSpeed, 0), ForceMode2D.Force);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isgrounded && canJump)
+        if (Input.GetKeyDown(KeyCode.I) && isgrounded && canJump)
         {
             canJump = false;
             rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
