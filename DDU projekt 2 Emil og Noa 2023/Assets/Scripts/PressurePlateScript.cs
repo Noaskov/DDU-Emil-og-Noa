@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class PressurePlateScript : MonoBehaviour
 {
-    /*
-    public bool Active;
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private PlatformController PC;
+
+    private void Start()
     {
-        
-        FindObjectOfType<PlatformController>().PressurePlateIsActive(Active = true);
+        PC = FindObjectOfType<PlatformController>();
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        PC.Activated(1);
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        FindObjectOfType<PlatformController>().PressurePlateIsActive(Active = false);
+        PC.Unactivated(0);
     }
-    */
 
 }

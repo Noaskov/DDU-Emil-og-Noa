@@ -25,23 +25,16 @@ public class RepulseMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(otherPlayer == null)
+        if(GameObject.Find("HostPlayer") !=null)
         {
-            if (this.gameObject.name == Names[0])
-            {
-                otherPlayer = GameObject.Find("Player(Clone)").transform;
-            }
-            else if(this.gameObject.name == Names[1])
-            {
-                otherPlayer = GameObject.Find("HostPlayer").transform;
-            }
-            else
-            {
-                return;
-            }
+            otherPlayer = GameObject.Find("Player(Clone)").transform;
         }
-        
-            Vector3 dir = otherPlayer.position - transform.position;
+        else
+        {
+            otherPlayer = GameObject.FindObjectOfType<AudioSource>().transform;
+        }
+
+        Vector3 dir = otherPlayer.position - transform.position;
        
         float curDist = Vector3.Distance(otherPlayer.position,transform.position);
         Blocking = Physics2D.Raycast(transform.position, dir, curDist, WhatIsOtherObstacle);

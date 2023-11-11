@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5d92e1fc1f1178840b4ca5ceaeb1f78e
   - enabled: 1
-    path: Assets/Scenes/MapTree.unity
-    guid: afac4dac548a18e4ba87b237aaa00bfb
-  - enabled: 1
     path: Assets/Scenes/First map.unity
     guid: 32c00f0cb8c9700499ef4a751b795f3c
   - enabled: 1

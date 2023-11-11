@@ -5,33 +5,37 @@ using UnityEngine;
 public class PlatformController : MonoBehaviour
 {
     private float Threshold = 0.1f;
-    private float Speed = 0.03f;
-    public Transform StartPosition;
-    public Transform EndPosition;
-    Transform target;
-    Vector3 dir;
+    private float Speed = 2f;
+    public Transform[] Waypoints;
+    int target;
+    
    
     void Start()
     {
-        
-        transform.position = StartPosition.position;
-        target.position = StartPosition.position;
-        
+
+        transform.position = Waypoints[0].position;
     }
 
     
-    void FixedUpdate()
+   public  void Activated(int Index)
     {
-        dir = transform.position - target.position;
-        dir = dir.normalized * Speed;
-        if(dir.sqrMagnitude < Threshold)
-        {
-            target.position = EndPosition.position;
-        }
+        target = Index;
         
-        
-        transform.position -= dir;
     }
 
-    
+    public void Unactivated(int Index)
+    {
+        target = Index;
+        
+    }
+
+    private void Update()
+    {
+        if (Vector2.Distance(Waypoints[target].position, transform.position) > Threshold)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, Waypoints[target].position, Time.deltaTime * Speed);
+        }
+    }
+
+
 }
