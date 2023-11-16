@@ -25,13 +25,13 @@ public class RepulseMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameObject.Find("HostPlayer") !=null)
+        if(this.gameObject.name=="Player2(Clone)")
         {
-            otherPlayer = GameObject.Find("Player(Clone)").transform;
+            otherPlayer = GameObject.Find("Player1(Clone)").transform;
         }
-        else
+        else if(this.gameObject.name == "Player1(Clone)")
         {
-            otherPlayer = GameObject.FindObjectOfType<AudioSource>().transform;
+            otherPlayer = GameObject.Find("Player2(Clone)").transform;
         }
 
         Vector3 dir = otherPlayer.position - transform.position;
