@@ -46,7 +46,13 @@ public class SpawnPlayers : MonoBehaviour
 
     public void resetPlayers()
     {
-        return;
+        var player1 = GameObject.Find("Player1(Clone)");
+        player1.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+        player1.transform.position = Playerspawns[0].position;
+
+        var player2 = GameObject.Find("Player2(Clone)");
+        player2.GetComponent<Rigidbody2D>().velocity = new Vector3(0,0,0);
+        player2.transform.position = Playerspawns[1].position;
     }
 
     private void Update()
