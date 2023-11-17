@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using TMPro;
+using Photon.Realtime;
 
 
 
@@ -12,10 +13,11 @@ public class CreateAndJoinLobbies : MonoBehaviourPunCallbacks
     public TMP_InputField createInput;
     public TMP_InputField joinInput;
     public GameObject MainPanel;
+    
     public GameObject MapTree;
     public void CreateRoom()
     {
-        PhotonNetwork.CreateRoom(createInput.text);
+        PhotonNetwork.CreateRoom(createInput.text, new RoomOptions() {MaxPlayers =2 });
 
     }
      
@@ -27,6 +29,7 @@ public class CreateAndJoinLobbies : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         MainPanel.SetActive(false);
+        
         MapTree.SetActive(true);
     }
 
@@ -34,5 +37,7 @@ public class CreateAndJoinLobbies : MonoBehaviourPunCallbacks
     {
         Application.Quit();
     }
+
+    
 
 }
