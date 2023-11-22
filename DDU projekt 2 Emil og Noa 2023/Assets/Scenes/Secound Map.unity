@@ -6184,6 +6184,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1534657362}
     - target: {fileID: 7511255307289644247, guid: 4db3f9c97d8e08a48b9d370362095659, type: 3}
+      propertyPath: Players.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7511255307289644247, guid: 4db3f9c97d8e08a48b9d370362095659, type: 3}
+      propertyPath: Players.Array.data[0]
+      value: 
+      objectReference: {fileID: 7560296642737401232, guid: bf6fd3ba95df7714497fc5629c501f1b, type: 3}
+    - target: {fileID: 7511255307289644247, guid: 4db3f9c97d8e08a48b9d370362095659, type: 3}
+      propertyPath: Players.Array.data[1]
+      value: 
+      objectReference: {fileID: 7560296642737401232, guid: d7eedd9a3515807489e82082d5eb450c, type: 3}
+    - target: {fileID: 7511255307289644247, guid: 4db3f9c97d8e08a48b9d370362095659, type: 3}
       propertyPath: Playerspawns.Array.size
       value: 2
       objectReference: {fileID: 0}
